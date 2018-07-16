@@ -1,0 +1,215 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.smartbiz</groupId>
+	<artifactId>smartbiz</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	
+	<properties>
+		<maven-compiler-plugin>3.2</maven-compiler-plugin>
+		<maven-compiler-source>1.8</maven-compiler-source>
+		<maven-compiler-target>1.8</maven-compiler-target>
+		<tomcat-maven-version>2.2</tomcat-maven-version>
+	
+		<javaee-web-api.version>6.0</javaee-web-api.version>
+		<spring-webmvc.version>5.0.7.RELEASE</spring-webmvc.version>
+		<spring-security.version>4.0.1.RELEASE</spring-security.version>
+		<javax-servlet-jsp.version>2.3.2-b01</javax-servlet-jsp.version>
+		<jstl.version>1.2</jstl.version>
+		<bootstrap.version>3.3.6</bootstrap.version>
+		<jquery.version>1.9.1</jquery.version>
+		<log4j.version>1.2.17</log4j.version>
+		<hibernate-core.version>5.3.0.Final</hibernate-core.version>
+		<hibernate-validator.version>6.0.7.Final</hibernate-validator.version>
+		<jpa.version>1.0.0.Final</jpa.version>
+		<apache-tiles.version>3.0.8</apache-tiles.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>${javaee-web-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-webmvc.version}</version>
+		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		
+       <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-security.version}</version>
+        </dependency>
+        
+         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring-security.version}</version>
+        </dependency>	
+        
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>4.3.2.RELEASE</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>javax.servlet.jsp</groupId>
+		    <artifactId>javax.servlet.jsp-api</artifactId>
+		    <version>${javax-servlet-jsp.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${bootstrap.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>${jquery.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-datepicker</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-core</artifactId>
+		    <version>${apache-tiles.version}</version>
+		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-extras -->
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-extras</artifactId>
+		    <version>${apache-tiles.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>${hibernate-core.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<!-- <dependency>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>${hibernate-validator.version}</version>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+		<dependency>
+		    <groupId>org.hibernate.javax.persistence</groupId>
+		    <artifactId>hibernate-jpa-2.1-api</artifactId>
+		    <version>${jpa.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		    <version>4.3.18.RELEASE</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aspects</artifactId>
+		    <version>5.0.7.RELEASE</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.el/javax.el-api -->
+		<dependency>
+		    <groupId>javax.el</groupId>
+		    <artifactId>javax.el-api</artifactId>
+		    <version>2.2.4</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		    <version>2.0.8.RELEASE</version>
+		</dependency>
+		
+		
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>20030825.184428</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>20030825.183949</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin}</version>
+					<configuration>
+						<verbose>true</verbose>
+						<source>${maven-compiler-source}</source>
+						<target>${maven-compiler-target}</target>
+						<showWarnings>true</showWarnings>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>${tomcat-maven-version}</version>
+					<configuration>
+						<path>/</path>
+						<contextReloadable>true</contextReloadable>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<finalName>smartbiz</finalName>
+	</build>
+</project>
