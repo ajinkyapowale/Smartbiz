@@ -1,0 +1,20 @@
+CREATE TABLE `smartbiz`.`user_group` ( `ugid` INT NOT NULL AUTO_INCREMENT , `group_name` VARCHAR(10) NOT NULL , `created_on` DATETIME NOT NULL , `updated_on` DATETIME NOT NULL , `created_by` INT NOT NULL , `updated_by` INT NOT NULL , `status` VARCHAR(1) NOT NULL , `deleted` VARCHAR(1) NOT NULL , PRIMARY KEY (`ugid`)) ENGINE = InnoDB;
+
+
+CREATE TABLE `smartbiz`.`user` ( `uid` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(20) NOT NULL , `last_name` VARCHAR(20) NOT NULL , `email_id` VARCHAR(30) NOT NULL , `password` VARCHAR(10) NOT NULL , PRIMARY KEY (`uid`)) ENGINE = InnoDB
+
+INSERT INTO `user` (`uid`, `first_name`, `last_name`, `email_id`, `password`) VALUES (NULL, 'Ajinkya', 'Powale', 'dhan311092@gmail.com', 'abc')
+
+ALTER TABLE `user` ADD `user_group` INT NOT NULL AFTER `uid`;
+
+ALTER TABLE `user` ADD CONSTRAINT `USER_USER_GROUP_FK` FOREIGN KEY (`user_group`) REFERENCES `user_group`(`ugid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `user` ADD `created_on` DATE NULL AFTER `password`, ADD `updated_on` DATE NULL AFTER `created_on`, ADD `created_by` INT NULL AFTER `updated_on`, ADD `updated_by` INT NULL AFTER `created_by`, ADD `status` VARCHAR(1) NULL AFTER `updated_by`, ADD `deleted` VARCHAR(1) NULL AFTER `status`;
+
+ALTER TABLE `user_group` CHANGE `group_name` `group_name` VARCHAR(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+INSERT INTO `user_group` (`ugid`, `group_name`, `created_on`, `updated_on`, `created_by`, `updated_by`, `status`, `deleted`) VALUES (NULL, 'SALES_PERSON', '2018-07-14 00:00:00', '2018-07-14 00:00:00', '1', '1', 'A', 'N')
+
+INSERT INTO `user` (`uid`, `user_group`, `first_name`, `last_name`, `email_id`, `password`, `created_on`, `updated_on`, `created_by`, `updated_by`, `status`, `deleted`) VALUES (NULL, '2', 'Ajinkya', 'Powale', 'dhan311092_sp@gmail.com', 'abc', '2018-06-26', '2018-06-24 00:00:00', '1', '1', 'A', 'N')
+
+ALTER TABLE `user` CHANGE `user_group` `ugid` INT(11) NOT NULL;
