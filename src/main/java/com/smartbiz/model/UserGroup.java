@@ -38,7 +38,7 @@ public class UserGroup extends BaseModel implements Serializable{
 
 	@Id
 	@Column
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getUgid() {
 		return ugid;
 	}

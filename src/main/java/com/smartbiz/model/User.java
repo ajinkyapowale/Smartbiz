@@ -54,7 +54,7 @@ public class User extends BaseModel implements Serializable{
 
 	@Id
 	@Column
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getUid() {
 		return uid;
 	}

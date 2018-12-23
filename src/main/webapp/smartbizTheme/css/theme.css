@@ -9,6 +9,7 @@ padding-top: 4.5rem;
     --disabled:#ECEFF1;
     --disabled-dark:#78909C;
     --gray-light:#90A4AE;
+    --light:#e9ecef;
 }
 .bg-primary {
     background-color: var(--primary)!important;
@@ -123,6 +124,174 @@ padding-top: 4.5rem;
 }
 .form-control.error{
     border-color: var(--danger);
+}
+
+.alert{
+	display:none;
+    position: fixed;
+    z-index: 999;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+    min-width: 50px;
+    max-width: 60%;
+    text-align: center;
+}
+
+.floatingActionPanel {
+    position: fixed;
+    bottom: 50px;
+    width: 56px;
+    height: auto;
+	right: 25px;
+	display:flex;
+	flex-direction: column-reverse;
+}
+
+.floatingActionButton{
+	margin: 10px auto 0px auto;
+    padding: 11px 12px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--white);
+    border: 1px solid var(--info);
+    border-radius: 30px;
+    margin-bottom: 10px;
+    color: var(--info);
+    box-shadow: 1px 1px 20px var(--gray-light);
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    display:none;
+    transform: scale(0);
+    animation-name: enter;
+    animation-fill-mode: forwards;
+    animation-duration: 0.1s;
+    transform-origin: bottom center;
+}
+
+.floatingActionDrawerButton {
+   /*  padding: 19px 20px; */
+   	padding: 15px 20px;
+    background-color: var(--info);
+    border: 1px solid var(--info);
+    border-radius: 30px;
+    box-shadow: 1px 1px 20px var(--gray-light);
+    height: 56px;
+    width: 56px;
+    color: var( --white);
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.floatingActionDrawerButton::before{
+	content:'\f0c9 ';
+	font-family: 'Font Awesome\ 5 Free';
+	font-weight: 600; /* Fix version 5.0.9 */
+}
+
+.floatingConfirmButton{
+	display:none;
+	padding: 15px 20px;
+    background-color: var(--success);
+    border: 1px solid var(--success);
+    border-radius: 30px;
+    box-shadow: 1px 1px 20px var(--gray-light);
+    height: 56px;
+    width: 56px;
+    color: var( --white);
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.floatingConfirmButton::before{
+	content:'\f00c ';
+	font-family: 'Font Awesome\ 5 Free';
+	font-weight: 600; /* Fix version 5.0.9 */
+}
+
+.floatingCancelButton{
+	margin: 10px auto 0px auto;
+    padding: 7px 14px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--danger);
+    border: 1px solid var(--danger);
+    border-radius: 30px;
+    margin-bottom: 10px;
+    color: var(--white);
+    box-shadow: 1px 1px 20px var(--gray-light);
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    display:none;
+    transform: scale(0);
+    animation-name: enter;
+    animation-fill-mode: forwards;
+    animation-duration: 0.1s;
+    transform-origin: bottom center;
+}
+.floatingCancelButton::before{
+	content:'\f00d ';
+	font-family: 'Font Awesome\ 5 Free';
+	font-weight: 600; /* Fix version 5.0.9 */
+}
+
+.floatingConfirmButton.disabled{
+	background-color: var(--light);
+    border: 1px solid var(--light);
+    box-shadow: 1px 0px 5px var(--gray-light);
+    cursor:inherit;
+}
+
+.floatingActionButton:hover, 
+.floatingActionDrawerButton:hover, 
+.floatingConfirmButton:hover,
+.floatingCancelButton:hover {
+    box-shadow: 1px 0px 5px var(--gray-light);
+    transition: all 300ms ease-in;
+}
+
+.floatingActionButton:nth-of-type(1){
+	animation-delay: 0.1s;
+}
+.floatingActionButton:nth-of-type(2){
+	animation-delay: 0.2s;
+}
+.floatingActionButton:nth-of-type(3){
+	animation-delay: 0.3s;
+}
+.floatingActionButton:nth-of-type(4){
+	animation-delay: 0.4s;
+}
+.floatingActionButton:nth-of-type(5){
+	animation-delay: 0.5s;
+}
+.floatingActionButton:nth-of-type(6){
+	animation-delay: 0.6s;
+}
+
+.animateFABDrawer{
+	transform:rotate(45deg);
+}
+
+.formValue{
+	font-weight:bold;
+}
+
+.animateFABDrawer::before{
+	content:'\f067';
+	font-family: 'Font Awesome\ 5 Free';
+	font-weight: 600; /* Fix version 5.0.9 */
+}
+
+@keyframes enter {
+  from {
+    transform: scale(0);
+    /*translate: (0px, 0px);*/
+  }
+  to {
+    transform: scale(1);
+    /*translate: (0px, 10px);*/
+  }
 }
 
 .jcf-checkbox span{

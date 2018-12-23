@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+
+import com.smartbiz.controller.LoginSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -23,8 +26,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public void configureGlobalSecurity(AuthenticationManagerBuilder auth)
 			throws Exception {
 		auth.inMemoryAuthentication().withUser("ajinkya").password("ajinkya")
-				.roles("USER", "ADMIN","SALES_PERSON");
-		 //auth.userDetailsService(userDetailsService);
+				.roles("ADMIN");
+		//.roles("USER", "ADMIN","SALES_PERSON");
+		 auth.userDetailsService(userDetailsService);
 	     auth.authenticationProvider(authenticationProvider());
 	}
 
@@ -33,12 +37,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests()
 		.antMatchers("/login","/*theme*/**").permitAll()
-		.antMatchers("/", "/*todo*/**").access("hasAnyRole('USER','ADMIN','SALES_PERSON')")
+		/*.antMatchers("/admin/**").access("hasAnyRole('ADMIN','ROLE_ADMIN')")
+		.antMatchers("/sp/**").access("hasAnyRole('SALES_PERSON','ROLE_SALES_PERSON','ADMIN','ROLE_ADMIN')")*/
+		.antMatchers("/admin/**").hasAnyAuthority("ADMIN")
+		.antMatchers("/sp/**").hasAnyAuthority("SALES_PERSON","ADMIN")
+		//.antMatchers("/", "/*todo*/**").access("hasAnyRole('USER','ADMIN','SALES_PERSON')")
 		.anyRequest().authenticated()
 
 		.and()
 		.formLogin()
 		.loginPage("/login").permitAll()
+		.successHandler(myAuthenticationSuccessHandler())
 		.failureUrl("/login?error=true")
 		
 		.and()
@@ -60,5 +69,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         authenticationProvider.setUserDetailsService(userDetailsService);
         //authenticationProvider.setPasswordEncoder(passwordEncoder());
         return authenticationProvider;
+    }
+	 
+	@Bean
+    public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
+        return new LoginSuccessHandler();
     }
 }

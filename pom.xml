@@ -24,6 +24,7 @@
 		<hibernate-validator.version>6.0.7.Final</hibernate-validator.version>
 		<jpa.version>1.0.0.Final</jpa.version>
 		<apache-tiles.version>3.0.8</apache-tiles.version>
+		<jackson-version>2.9.6</jackson-version>
 	</properties>
 
 	<dependencies>
@@ -182,6 +183,18 @@
 			<artifactId>commons-pool</artifactId>
 			<version>20030825.183949</version>
 		</dependency>
+		
+		
+		<dependency>
+	        <groupId>com.fasterxml.jackson.core</groupId>
+	        <artifactId>jackson-core</artifactId>
+	        <version>${jackson-version}</version>
+	    </dependency>
+    	<dependency>
+	        <groupId>com.fasterxml.jackson.core</groupId>
+	        <artifactId>jackson-databind</artifactId>
+	        <version>${jackson-version}</version>
+	    </dependency>
 		
 	</dependencies>
 

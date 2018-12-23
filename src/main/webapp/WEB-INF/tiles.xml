@@ -21,8 +21,30 @@
 	
 	<definition name="access-denied" extends="baseLayout">
 	    <put-attribute name="title" value="Access Denied - Smartbiz" />
-	    <put-attribute name="menu" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu" 	value="/WEB-INF/views/common/navigation.jsp" />
 	    <put-attribute name="body" value="/WEB-INF/views/access-denied.jsp" />
+	</definition>
+	
+	<definition name="adminHome" extends="baseLayout">
+	    <put-attribute name="title" value="Admin Home - Smartbiz" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu" 	value="/WEB-INF/views/common/navigation.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/views/admin/adminHome.jsp" />
+	</definition>
+	
+	<definition name="spHome" extends="baseLayout">
+	    <put-attribute name="title" value="SP Home - Smartbiz" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu" 	value="/WEB-INF/views/common/navigation.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/views/sp/spHome.jsp" />
+	</definition>
+	
+	<definition name="vendorList" extends="baseLayout">
+	    <put-attribute name="title" value="Vendors - Smartbiz" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu" 	value="/WEB-INF/views/common/navigation.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/views/admin/vendorList.jsp" />
 	</definition>
 	
 	<definition name="list-todos" extends="baseLayout">

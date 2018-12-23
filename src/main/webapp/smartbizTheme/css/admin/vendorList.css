@@ -1,0 +1,18 @@
+/* #vendorForm{
+	display:none;
+	background-color: var(--light);
+	padding:15px;
+	margin-bottom: 30px;
+} */
+
+#pageAlert{
+	display:none;
+}
+
+.singleSelect, .multiSelect{
+	display:none;
+}
+
+#vendorTbl tbody tr{
+	cursor:pointer;
+}
